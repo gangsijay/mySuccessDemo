@@ -38,4 +38,4 @@ eureka: 服务注册和发现
 运行account 端口号8083
 测试
 通关zuul网关访问认证服务获取 access token 8088是网关端口 
-
+参考：https://gitee.com/DistributedDevelopment/Spring-CloudJiYuZuulDeTongYiShouQuanRenZheng
