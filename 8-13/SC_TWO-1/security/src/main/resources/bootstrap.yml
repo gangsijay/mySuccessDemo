@@ -1,0 +1,27 @@
+spring:
+  application:
+      name: security
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      profile: dev
+      name: ${spring.application.name},db-config
+  mvc: 
+    view: 
+      prefix: classpath:/templates/
+      suffix: .html 
+server:
+  port: 8766
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#logging:
+#  config: classpath:log4j2.xml
+#feign:
+#  hystrix:
+#    enabled: false
+  
