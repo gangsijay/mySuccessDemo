@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.zhm</groupId>
+    <artifactId>root</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>root</name>
+    <url>http://maven.apache.org</url>
+    <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <modules>
+        <!-- OAuth服务 -->
+        <module>oauth-server</module>
+        <!-- API网关 -->
+        <module>api-gateway</module>
+        <!-- APP用户服务 -->
+        <module>api-user</module>
+        <!-- APP公共服务 -->
+        <module>api-common</module>
+        <!-- 后台管理 -->
+        <module>mgr-server</module>
+        <!-- 数据库对应的bean -->
+        <module>db-bean</module>
+        <!-- OAuth管理 -->
+        <module>oauth-mgr</module>
+    </modules>
+    <dependencies>
+        <!-- 时间工具包 -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-core</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+        <!-- 防sql注入工具 -->
+        <dependency>
+            <groupId>com.github.rkpunjal.sqlsafe</groupId>
+            <artifactId>sql-injection-safe</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>bson</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+    </dependencies>
+</project>
