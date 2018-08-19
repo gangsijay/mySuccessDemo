@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: oauth
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: lg
+Implementation-Vendor-Id: com.two
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/LG-MICRO/oauth
+Created-By: Maven Integration for Eclipse
+

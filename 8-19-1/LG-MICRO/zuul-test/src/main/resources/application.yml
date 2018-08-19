@@ -1,0 +1,57 @@
+server:
+  port: 7073
+security:
+  user:
+    password: user  # 直接登录时的密码
+  ignored: /
+  sessions: never   # session策略
+  oauth2:
+    sso:
+      loginPath: /login   # 登录路径
+#    client:
+#      clientId: 1fe05590c91aff70056b
+#      clientSecret: 2b26975997d4ff3a97c38323adead7889fcefb53
+#      accessTokenUri: https://github.com/login/oauth/access_token
+#      userAuthorizationUri: https://github.com/login/oauth/authorize
+#    resource:
+#      userInfoUri: https://api.github.com/user
+#      preferTokenInfo: false
+
+    client:
+      clientId: android
+      clientSecret: android
+      accessTokenUri: http://127.0.0.1:8763/oauth/access_token
+      userAuthorizationUri: http://127.0.0.1:8763/oauth/authorize
+    resource:
+      userInfoUri: http://127.0.0.1:8763/user
+      preferTokenInfo: false
+  
+
+spring:
+  application:
+    name: zuul
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      
+zuul:
+  ignored-services: '*'
+  routes:
+    auth-server:
+      path: /uaa/**
+      serviceId: secu-oauth
+      sensitiveHeaders:
+      strip-prefix: false
+    api-a: 
+      path: /api-a/**
+      service-id: service-A
+#    api-r: 
+#      path: /api-ribbon/**
+#      service-id: RIBBON
+#    api-b: 
+#      path: /api-b/**
+#      service-id: service-B
+#logging:
+#  config: classpath:logback.xml
